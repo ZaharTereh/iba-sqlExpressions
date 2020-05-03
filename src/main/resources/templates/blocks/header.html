@@ -1,0 +1,16 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<div th:fragment="header">
+    <link rel="stylesheet" th:href="@{/css/header.css}" href="../../css/header.css" />
+    <nav class="site-header sticky-top py-1">
+        <div class="container d-flex flex-column flex-md-row justify-content-between">
+            <a class="py-2" href="https://iba.by" aria-label="IBA">
+                <img class="image-size" th:src="@{/image/IBA.jpg}" href="../../image/IBA.jpg"alt="IBA">
+            </a>
+            <a class="py-2 d-none d-md-inline-block" th:href="@{/menu}">Menu</a>
+            <a class="py-2 d-none d-md-inline-block" th:href="@{/history}">History</a>
+            <a class="py-2 d-none d-md-inline-block" th:href="@{/sql}">SQL Expression</a>
+            <a class="py-2 d-none d-md-inline-block" th:href="@{/users/updateForm}">Update</a>
+            <a class="py-2 d-none d-md-inline-block" th:href="@{/logout}">Logout</a>
+        </div>
+    </nav>
+</div>

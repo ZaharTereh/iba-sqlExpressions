@@ -1,0 +1,31 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<HEAD>
+    <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <TITLE>Menu</TITLE>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+</HEAD>
+<body>
+
+<header th:insert="blocks/header :: header"></header>
+
+<br><br>
+<div class="container  content col-md-offset-3 col-md-6">
+    <H2 class="text-center">Hello,<strong><text th:text="${user.firstName}"/></strong></H2>
+
+    <H3 class="text-center"><strong>Your Data:</strong></H3>
+    <hr class="hr-cst">
+    <h4>
+        <label>Last name:</label><text th:text="${user.lastName}"></text><br><br>
+        <label>First name:</label><text th:text="${user.firstName}"></text><br><br>
+        <label>Email:</label><text th:text="${user.email}"></text><br><br>
+        <label>Username:</label><text th:text="${user.username}"></text><br><br>
+        <label>Role:</label><text th:text="${user.role}"></text><br><br>
+    </h4>
+<br>
+<br>
+</div>
+
+<footer th:insert="blocks/footer :: footer"></footer>
+
+</body>
+<HTML>

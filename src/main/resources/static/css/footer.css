@@ -1,0 +1,25 @@
+
+.site-header {
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+}
+
+.content{
+    flex-grow: 1;
+}
+
+.footer {
+
+    flex-grow: 0;
+    bottom: 0px;
+    right: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, .85);
+    text-align: center;
+}

@@ -1,0 +1,38 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>History</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+<div class="container content">
+    <br><br>
+    <div>
+        <div class="text-center">
+            <h3>Your sql queries</h3>
+        </div>
+        <hr>
+        <table class="table table-bordered table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Username</th>
+                    <th>SQL Query</th>
+                    <th>Message</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="userLog : ${userLogs}">
+                    <td th:text="${userLog.user.username}"></td>
+                    <td th:text="${userLog.sqlQuery}"></td>
+                    <td th:text="${userLog.message}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<footer th:insert="blocks/footer :: footer"></footer>
+
+</body>
+</html>
