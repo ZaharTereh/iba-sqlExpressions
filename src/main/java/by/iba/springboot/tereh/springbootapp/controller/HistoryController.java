@@ -1,7 +1,5 @@
 package by.iba.springboot.tereh.springbootapp.controller;
 
-import by.iba.springboot.tereh.springbootapp.model.User;
-import by.iba.springboot.tereh.springbootapp.repository.UserLogRepository;
 import by.iba.springboot.tereh.springbootapp.security.details.UserDetailsImpl;
 import by.iba.springboot.tereh.springbootapp.service.UserLogService;
 import org.springframework.beans.factory.annotation.Autowired;

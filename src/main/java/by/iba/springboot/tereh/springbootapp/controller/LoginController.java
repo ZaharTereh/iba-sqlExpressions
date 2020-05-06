@@ -1,7 +1,6 @@
 package by.iba.springboot.tereh.springbootapp.controller;
 
 import by.iba.springboot.tereh.springbootapp.dto.UserDTO;
-import by.iba.springboot.tereh.springbootapp.form.UserForm;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;

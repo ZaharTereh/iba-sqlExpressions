@@ -24,7 +24,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .authorizeRequests()
                         .antMatchers("/signUp","/login").anonymous()
-                        .antMatchers("/history/**","/menu/**").authenticated()
+                        .antMatchers("/history/**","/menu/**","/sql/**").authenticated()
                 .and()
                 .formLogin()
                     .loginPage("/login")

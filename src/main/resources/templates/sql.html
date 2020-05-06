@@ -1,0 +1,36 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>SQL Expressions</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+<div class="container content">
+    <br><br>
+    <div>
+        <div class="text-center">
+            <h3>List of available tables</h3>
+        </div>
+        <hr>
+        <table class="table table-bordered table-striped">
+            <thead class="thead-dark">
+            <tr>
+                <th>Name of table</th>
+                <th>Name of fields</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="table : ${tables}">
+                <td th:text="${table.name}"></td>
+                <td th:text="${table.fields}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<footer th:insert="blocks/footer :: footer"></footer>
+
+</body>
+</html>

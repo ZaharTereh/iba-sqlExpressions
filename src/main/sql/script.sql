@@ -26,3 +26,14 @@ CREATE TABLE  user_log(
 
     foreign key (user_id) references user(id)
 );
+
+
+show tables;
+
+SELECT COLUMN_NAME
+FROM information_schema.COLUMNS
+WHERE TABLE_SCHEMA = DATABASE()
+  AND TABLE_NAME = 'user'
+ORDER BY ORDINAL_POSITION;
+
+show columns from user;
