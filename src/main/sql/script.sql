@@ -19,10 +19,11 @@ CREATE TABLE user(
 );
 
 CREATE TABLE  user_log(
-    id        int          primary key auto_increment,
-    sql_query varchar(220) not null ,
-    message   varchar(220) not null ,
-    user_id   int         not null ,
+    id        int           primary key auto_increment,
+    sql_query varchar(220)  not null ,
+    message   varchar(220)  not null ,
+    result    varchar(1000) null ,
+    user_id   int           not null ,
 
     foreign key (user_id) references user(id)
 );

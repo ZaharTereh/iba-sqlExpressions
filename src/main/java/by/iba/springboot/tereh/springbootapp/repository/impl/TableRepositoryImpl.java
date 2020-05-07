@@ -1,14 +1,17 @@
 package by.iba.springboot.tereh.springbootapp.repository.impl;
 
 import by.iba.springboot.tereh.springbootapp.model.Tables;
+import by.iba.springboot.tereh.springbootapp.model.UserLog;
 import by.iba.springboot.tereh.springbootapp.repository.TableRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Repository;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 @Repository
 public class TableRepositoryImpl implements TableRepository {
@@ -38,5 +41,31 @@ public class TableRepositoryImpl implements TableRepository {
         }
 
         return tables;
+    }
+
+    @Override
+    public UserLog executeQuery(String query) {
+
+        //проверка команды
+
+        UserLog userLog = new UserLog();
+        StringBuilder result = new StringBuilder();
+        try {
+            List<Map<String,Object>> list= jdbcTemplate.queryForList(query);
+            for (Map<String,Object> map:list) {
+                for (Map.Entry<String, Object> entry : map.entrySet()) {
+                    result.append(entry.getKey() + " : " + entry.getValue() + ",");
+                }
+                result.append("-----------" + System.lineSeparator());
+            }
+            userLog.setMessage("Completed successfully");
+            userLog.setResult(result.toString());
+
+        }catch (Exception e){
+            userLog.setMessage("Runtime error");
+            userLog.setResult(e.getMessage());
+        }
+        userLog.setSqlQuery(query);
+        return userLog;
     }
 }

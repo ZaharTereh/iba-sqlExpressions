@@ -28,6 +28,23 @@
             </tbody>
         </table>
     </div>
+
+    <div th:if="${result}">
+        <h3>Result:</h3><text th:text="${result}"></text>
+    </div>
+
+    <div>
+        <br><br>
+        <h3>Enter your SQL expression</h3>
+        <hr>
+        <form th:action="@{/execute}" method="post">
+            <p><textarea rows="5" cols="150" name="query"></textarea></p>
+            <div class="form-group">
+                <button type="submit" class="btn btn-default btn-info">Execute</button>
+            </div>
+        </form>
+    </div>
+
 </div>
 
 <footer th:insert="blocks/footer :: footer"></footer>
